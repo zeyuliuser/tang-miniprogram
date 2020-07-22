@@ -8,11 +8,11 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-@TableName("user_watch_detail")
-public class UserWatchDetailPO {
+@TableName("stone_class")
+public class StoneClassPO {
     @TableId(type = IdType.UUID)
     private String id;
-    private String userId;
-    private String productId;
-    private Date clickTime;
+    private Date createTime;
+    private String classInfo;
+    private int classLevel;
 }
