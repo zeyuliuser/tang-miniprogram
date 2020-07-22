@@ -12,6 +12,7 @@ import com.tang.tangminiprogram.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,6 +26,8 @@ public class UserServiceImpl extends ServiceImpl<UserDao,UserPO> implements User
     public Map<String,Object> addUserInfo(UserPO userPO) {
         Map<String,Object> resmap = new HashMap<String,Object>();
         try{
+            userPO.setLevel(4);
+            userPO.setCreateTime(new Date());
             int res = userDao.insert(userPO);
             if(res == 1){
                 resmap.put("code",res);

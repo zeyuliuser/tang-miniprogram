@@ -22,11 +22,7 @@ public class UserController {
 
     @RequestMapping(value = "addUser",method = RequestMethod.POST)
     public Map<String,Object> addUser(@RequestBody UserPO userPO){
-        Map<String,Object> res = new HashMap<>();
-        userPO.setLevel(4);
-        userPO.setCreateTime(new Date());
-        res = userService.addUserInfo(userPO);
-        return res;
+        return userService.addUserInfo(userPO);
     }
 
     @RequestMapping(value = "watchUserList",method = RequestMethod.POST)
