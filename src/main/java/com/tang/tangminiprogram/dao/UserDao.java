@@ -9,4 +9,6 @@ import org.apache.ibatis.annotations.Param;
 public interface UserDao extends BaseMapper<UserPO> {
 
     int countById(@Param("id") String id);
+
+    String findThisId();
 }

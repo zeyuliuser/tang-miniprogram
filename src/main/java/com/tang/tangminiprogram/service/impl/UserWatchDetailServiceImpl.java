@@ -29,7 +29,7 @@ public class UserWatchDetailServiceImpl extends ServiceImpl<UserWatchDetailDao, 
     @Override
     public Map<String, Object> addUserWatchDetail(AddWatchReq addWatchReq) {
         Map<String,Object> resmap = new HashMap<String,Object>();
-        if(StringUtils.isEmpty(addWatchReq.getUserWatchDetailPO().getUserId())||StringUtils.isEmpty(addWatchReq.getUserWatchDetailPO().getProductId())){
+        if(StringUtils.isEmpty(StringUtils.isEmpty(addWatchReq.getUserWatchDetailPO().getProductId()))){
             resmap.put("code",400);
             resmap.put("info","非法字段");
             return resmap;
@@ -37,6 +37,9 @@ public class UserWatchDetailServiceImpl extends ServiceImpl<UserWatchDetailDao, 
         int isExist = userDao.countById(addWatchReq.getUserPO().getId());
         if(isExist == 0){
             userService.addUserInfo(addWatchReq.getUserPO());
+            String id = userDao.findThisId();
+            addWatchReq.setUserPO(userDao.selectById(id));
+            addWatchReq.getUserWatchDetailPO().setUserId(id);
         }
         try{
             addWatchReq.getUserWatchDetailPO().setClickTime(new Date());

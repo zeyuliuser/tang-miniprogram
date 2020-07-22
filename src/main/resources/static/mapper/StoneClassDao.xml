@@ -4,6 +4,6 @@
 <mapper namespace="com.tang.tangminiprogram.dao.StoneClassDao">
 
     <select id="countById" resultType="java.lang.Integer">
-        select count(1) from product where id = #{id}
+        select count(1) from stone_class where id = #{id}
     </select>
 </mapper>
