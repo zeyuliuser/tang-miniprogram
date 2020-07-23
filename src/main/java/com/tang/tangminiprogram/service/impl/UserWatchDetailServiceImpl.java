@@ -1,10 +1,15 @@
 package com.tang.tangminiprogram.service.impl;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.tang.tangminiprogram.Utils.PageUtils;
 import com.tang.tangminiprogram.dao.UserDao;
 import com.tang.tangminiprogram.dao.UserWatchDetailDao;
+import com.tang.tangminiprogram.po.UserPO;
 import com.tang.tangminiprogram.po.UserWatchDetailPO;
 import com.tang.tangminiprogram.request.AddWatchReq;
+import com.tang.tangminiprogram.request.WatchDetailPageReq;
 import com.tang.tangminiprogram.service.UserService;
 import com.tang.tangminiprogram.service.UserWatchDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +19,7 @@ import org.springframework.util.StringUtils;
 import javax.annotation.Resource;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service("userWatchDetailService")
@@ -56,5 +62,15 @@ public class UserWatchDetailServiceImpl extends ServiceImpl<UserWatchDetailDao, 
             resmap.put("info",e);
             return resmap;
         }
+    }
+
+    @Override
+    public PageUtils<UserWatchDetailPO> userWatchDetailList(WatchDetailPageReq watchDetailPageReq) {
+        Page<UserWatchDetailPO> page = new Page<>(watchDetailPageReq.getCurrent(),watchDetailPageReq.getSize());
+        IPage<UserWatchDetailPO> iPage = userWatchDetailDao.userWatchDetailList(page);
+        List<UserWatchDetailPO> userWatchDetailPOS = iPage.getRecords();
+        PageUtils<UserWatchDetailPO> userWatchDetailPOPage = new PageUtils<>(iPage);
+        userWatchDetailPOPage.setList(userWatchDetailPOS);
+        return userWatchDetailPOPage;
     }
 }
