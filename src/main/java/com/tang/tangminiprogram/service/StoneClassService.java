@@ -4,10 +4,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.tang.tangminiprogram.po.ProductPO;
 import com.tang.tangminiprogram.po.StoneClassPO;
 
+import java.util.List;
 import java.util.Map;
 
 public interface StoneClassService extends IService<StoneClassPO> {
     Map<String, Object> addStoneClass(StoneClassPO stoneClassPO);
 
     Map<String, Object> deleteStoneClass(String id);
+
+    List<StoneClassPO> getStoneClassByLevel(String level);
+
+    StoneClassPO getStoneClassById(String id);
 }

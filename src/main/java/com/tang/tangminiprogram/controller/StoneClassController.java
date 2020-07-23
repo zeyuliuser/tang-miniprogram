@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -26,5 +27,14 @@ public class StoneClassController {
         return stoneClassService.deleteStoneClass(id);
     }
 
-    //todo 查看列表
+    @RequestMapping(value = "getStoneClassByLevel",method = RequestMethod.POST)
+    public List<StoneClassPO> getStoneClassByLevel(String level){
+        return stoneClassService.getStoneClassByLevel(level);
+    }
+
+    @RequestMapping(value = "getStoneClassById",method = RequestMethod.POST)
+    public StoneClassPO getStoneClassById(String id){
+        return stoneClassService.getStoneClassById(id);
+    }
+
 }

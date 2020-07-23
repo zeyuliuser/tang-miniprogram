@@ -6,4 +6,7 @@
     <select id="countById" resultType="java.lang.Integer">
         select count(1) from stone_class where id = #{id}
     </select>
+    <select id="getStoneClassByLevel" resultType="com.tang.tangminiprogram.po.StoneClassPO">
+        select * from stone_class where class_level = #{level}
+    </select>
 </mapper>

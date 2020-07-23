@@ -7,10 +7,12 @@ import com.tang.tangminiprogram.po.StoneClassPO;
 import com.tang.tangminiprogram.service.StoneClassService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestClientException;
 
 import javax.annotation.Resource;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service("stoneClassService")
@@ -62,5 +64,19 @@ public class StoneClassServiceImpl extends ServiceImpl<StoneClassDao, StoneClass
             resmap.put("info",e);
             return resmap;
         }
+    }
+
+    @Override
+    public List<StoneClassPO> getStoneClassByLevel(String level) {
+        return stoneClassDao.getStoneClassByLevel(level);
+    }
+
+    @Override
+    public StoneClassPO getStoneClassById(String id) {
+        int isExist = stoneClassDao.countById(id);
+        if(isExist == 0){
+            throw new RestClientException("该信息不存在或已经删除");
+        }
+        return stoneClassDao.selectById(id);
     }
 }
