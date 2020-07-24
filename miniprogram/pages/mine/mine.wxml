@@ -1,0 +1,25 @@
+<!--miniprogram/pages/mine/mine.wxml-->
+<!-- <text>miniprogram/pages/mine/mine.wxml</text> -->
+<view>
+<view class="login-bar">
+<image src="../../images/code-func-sum.png"></image>
+<text>登录/注册</text>
+</view>
+
+<view class="body-info">
+  <view class="body-container">
+    <view class="goto">
+      <image src="#"></image>
+      <text>我关注的</text>
+    </view>
+    <view class="goto">
+      <image src="#"></image>
+      <text>用户记录</text>
+    </view>
+    <view class="goto">
+      <image src="#"></image>
+      <text>添加管理员</text>
+    </view>
+  </view>
+</view>
+</view>
