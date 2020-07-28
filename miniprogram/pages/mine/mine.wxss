@@ -1,1 +1,32 @@
 /* miniprogram/pages/mine/mine.wxss */
+.login-bar{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 20rpx;
+  padding-bottom: 40rpx;
+  border-bottom: solid 1rpx snow;
+}
+.avpic{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  margin: 0rpx 40rpx 8rpx;
+}
+.goto{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: solid 1rpx snow;
+}
+.logo{
+  height: 20rpx;
+  width: 20rpx;
+}
+.goto text{
+  margin:40rpx;
+}
+.goto text::after{
+ content: ">";
+ color: tan;
+}

@@ -1,0 +1,8 @@
+/* miniprogram/pages/detail/detail.wxss */
+.header-bar{
+  height: 400rpx;
+  overflow-y: hidden;
+}
+.info-item{
+  padding:30rpx 10rpx;
+}

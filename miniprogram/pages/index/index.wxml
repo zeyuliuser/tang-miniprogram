@@ -1,11 +1,11 @@
 <!--index.wxml-->
 <view class="container">
 <view class="search-stone">
-<input placeholder="品种" id="search-input"></input> <button id="search-button">搜素</button>
+<input placeholder="品种" id="search-input" bindinput="changeInput">{{searchInput}}</input> <button id="search-button" bindtap="searchStone">搜索</button>
 </view>
 
 
-<view>品种</view>
+<view class="pz-title">品种</view>
 <view class="stone-info">
 <!-- <view class="stone-container"> -->
   <view class="stone-item" bindtap="">

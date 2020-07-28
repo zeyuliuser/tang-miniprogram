@@ -1,4 +1,4 @@
-// pages/mine.js
+// miniprogram/pages/detail/detail.js
 Page({
 
   /**

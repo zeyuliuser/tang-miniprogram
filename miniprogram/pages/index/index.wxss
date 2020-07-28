@@ -2,6 +2,25 @@
 .search-stone{
   display:flex;
   flex-direction: row;
+  align-items: center;
+  padding-left: 40rpx;
+}
+.search-stone input{
+  border:solid 1rpx #030303;
+  padding-left: 10rpx;
+}
+.search-stone button{
+  width: 200rpx;
+  background-color: gray;
+  border:solid 1rpx grey;
+  margin-left: 10rpx;
+}
+.pz-title{
+  width: 100%;
+  text-align: left;
+  padding-left: 60rpx;
+  padding-top: 40rpx;
+  padding-bottom: 10rpx;
 }
 /* .stone-container{
   width:100%;
@@ -25,6 +44,7 @@
   width: 120rpx;
   height: 120rpx;
 }
+
 page {
   background: #f6f6f6;
   display: flex;

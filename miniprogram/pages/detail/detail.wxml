@@ -1,0 +1,21 @@
+<!--miniprogram/pages/detail/detail.wxml-->
+<!-- <text>miniprogram/pages/detail/detail.wxml</text> -->
+<view>
+  <view class="header-bar">
+    <image src="../../images/code-func-sum.png"></image>
+  </view>
+  <view>
+    <view class="info-item">
+      <text class="title">品种:</text>
+      <text class="info">1111</text>
+    </view>
+    <view class="info-item">
+      <text class="title">颜色:</text>
+      <text class="info"></text>
+    </view>
+    <view class="info-item">
+      <text class="title">描述:</text>
+      <text class="info"></text>
+    </view>
+  </view>
+</view>

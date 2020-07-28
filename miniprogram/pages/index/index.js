@@ -7,16 +7,17 @@ Page({
     userInfo: {},
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    searchInput:"",
   },
 
   onLoad: function() {
-    if (!wx.cloud) {
-      wx.redirectTo({
-        url: '../chooseLib/chooseLib',
-      })
-      return
-    }
+    // if (!wx.cloud) {
+    //   wx.redirectTo({
+    //     url: '../chooseLib/chooseLib',
+    //   })
+    //   return
+    // }
 
     // 获取用户信息
     wx.getSetting({
@@ -116,5 +117,13 @@ Page({
       }
     })
   },
+  searchStone:function(e){
+    console.log(this.data.searchInput);
+  },
+  changeInput:function(e){
+    let that = this;
+    that.setData({searchInput:e.detail.value});
+    console.log(this.data.searchInput);
+  }
 
 })
